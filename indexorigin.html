@@ -11,83 +11,49 @@
     <link rel="stylesheet" 
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <title>2022 adidas 런 서울</title>
-    <script>
-        let smartPhones = [
-            "iphone", "ipad", "opera Mini", "opera mobi", "nokia", "android",
-            "webos", "windows ce", "blackberry", "iemoblie", "sonyericsson"
-        ];
-        //스마트폰 구분
-        for(let i in smartPhones) {
-            if(navigator.userAgent.toLowerCase().match(new RegExp(smartPhones[i]))) {
-                document.location = "http://jhjeon.dothome.co.kr/mindex.html";
-            } /*else {
-                let user = navigator.userAgent
-                alert(user);
-            }*/
-        }
-
-    </script>
 </head>
 <body>
-    
-<!--header-->    
 <section class="header">
     <nav>
-        <a href="index.html"><img src="images/adidas.jpg" alt="adidas logo" class="h-logo"></a>
+        <a href="index.html"><img src="images/adidas.jpg"></a>
         <div class="nav-links" id="navLinks">
+            <i class="fa fa-xmark" onclick="hideMenu()"></i>
             <ul>
                 <li><a href="intro.html">대회 안내</a></li>
-                <li><a href="regi_info.html">참가신청</a></li>
-                <li><a href="regi_edt.html">신청조회 및 기록확인</a></li>
-                <li><a href="notice.html">커뮤니티</a></li>
+                <li><a href="regi.html">참가신청</a></li>
+                <li><a href="#">신청조회 및 기록확인</a></li>
+                <li><a href="#">커뮤니티</a></li>
             </ul>
         </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
     </nav>
+    <div class="main_img">
+        
+    </div>
+<div class="text-box">
+    <h2>2022 adidas 런 서울</h2>
+    <p>아디다스와 함께하는 마라톤으로 여러분을 초대합니다.<br>
+        ※오프라인 대회로 진행합니다.
+    </p>
+    <a href="regi.html" class="hero-btn">참가신청</a>
+</div>
+
 </section>
 
-<!--line-->
-<div class="line">
-    <!--<span>2022 adidas run seoul | 2022 adidas run seoul | 2022 adidas run seoul | 2022 adidas run seoul
-        | 2022 adidas run seoul  | 2022 adidas run seoul  | 2022 adidas run seoul  | 2022 adidas run seoul
-        | 2022 adidas run seoul  | 2022 adidas run seoul  | 2022 adidas run seoul  | 2022 adi
-    </span>-->
-    <span></span>
-</div>
-
-<!--main bg img-->    
-<div class="bg">
-    <div class="main_img">
-        <img src="images/main3.png" alt="main img">
-    </div>    
-    <div class="text-box">
-        <h2>2022 adidas 런 서울</h2>
-        <p>아디다스와 함께하는 마라톤으로 여러분을 초대합니다.<br>
-            ※오프라인 대회로 진행합니다.
-        </p>
-        <a href="regi.html" class="m_regi-btn">참가신청</a>
-    </div>
-</div>
-
 <!--partners-->
+
 <section class="partners">
     <h2>메인 스폰서</h2>
-    <div class="spon">
-        <div class="spon1">
-                <a href="https://www.adidas.co.kr/" target="_blank">
-                <img src="images/adidas_ico.png"  alt="spon1"></a>
-        </div>
-        <div class="spon2">
-                <a href="https://www.samsung.com/sec/" target="_blank">
-                <img src="images/samsung.png"  alt="spon2"></a>
-        </div>
-        <div class="spon3">
-                <a href="https://www.coca-cola.co.kr/brands" target="_blank">
-                <img src="images/ade.jpg"  alt="spon3"></a>
-        </div>
-    </div>
+    <a href="https://www.adidas.co.kr/" target="_blank">
+    <img src="images/adidas_ico.png" width="200px" height="150px" alt=""></a>
+    <a href="https://www.samsung.com/sec/" target="_blank">
+    <img src="images/samsung.png" width="200px" height="150px" alt=""></a>
+    <a href="https://www.coca-cola.co.kr/brands" target="_blank">
+    <img src="images/ade.png" width="350px" height="99px" alt=""></a>
 </section>
 
 <!--cont_text-->
+
 <section class="cont_text">
     <div class="row">
         <div class="cont_text-col">
@@ -104,43 +70,47 @@
         </div>
         <div class="cont_text-col">
             <h2>참가비</h2>
-            <p>10K / 25K / Full<br>60000원</p>
+            <p>10K / 25K / Full<br>
+            60000원</p>
+            </p>
         </div>
     </div>   
 </section>
 
 <!--cont_prod-->
+
 <section class="cont_prod">
     <h2>NEW ARRIVAL</h2>
     <p>Adizero adios pro 3</p>
 
     <div class="container">
         <div class="inner">
-            <img src="images/shoe1.jpg" alt="shoe pic1">
+            <img src="images/shoe1.jpg">
         </div>
         <div class="inner">
-            <img src="images/shoe2.jpg" alt="shoe pic2">
+            <img src="images/shoe2.jpg">
         </div>
         <div class="inner">
-            <img src="images/shoe3.jpg" alt="shoe pic3">
+            <img src="images/shoe3.jpg">
         </div>
         <div class="inner">
-            <img src="images/shoe4.jpg" alt="shoe pic4">
+            <img src="images/shoe4.jpg">
         </div>
-        <a class="prev" onclick="btn_click(-1)">&#10094;</a>
-        <a class="next" onclick="btn_click(1)">&#10095;</a>
+        <a class="prev" onclick="btn_click(-1)">&#10094</a>
+        <a class="next" onclick="btn_click(1)">&#10095</a>
     </div>
 </section>
 
 <!--footer-->
+
 <section class="footer">
     <h4>주최</h4>
-    <img src="images/spon1.png" alt="I Seoul U">
+    <img src="images/spon1.png">
     <h4>스폰서</h4>
-    <img src="images/spon2.png" alt="sub spon1">
-    <img src="images/spon4.png" alt="sub spon2">
-    <img src="images/spon5.png" alt="sub spon3">
-    <img src="images/spon6.png" alt="sub spon4">
+    <img src="images/spon2.png">
+    <img src="images/spon4.png">
+    <img src="images/spon5.png">
+    <img src="images/spon6.png">
 
     <address id="ad1">
         <span>아디다스 마라톤 위원회</span>

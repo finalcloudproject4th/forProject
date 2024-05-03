@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="images/adidas_ico.png">
+    <link rel="stylesheet" href="css/regi.css">
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>참가신청</title>
+</head>
+<body>
+
+<!--header-->    
+<section class="header">
+    <nav>
+        <a href="index.html"><img src="images/adidas.jpg" alt="adidas logo" class="h-logo"></a>
+        <div class="nav-links" id="navLinks">
+            <ul>
+                <li><a href="intro.html">대회 안내</a></li>
+                <li><a href="regi_info.html">참가신청</a></li>
+                <li><a href="regi_edt.html">신청조회 및 기록확인</a></li>
+                <li><a href="notice.html">커뮤니티</a></li>
+            </ul>
+        </div>
+    </nav>
+</section>
+
+<!--side_menu & content-->
+<section class="side_menu">
+    <h2>참가신청</h2>
+    <ul class="menu">
+        <li><a href="regi_info.html">참가신청 안내</a></li>
+        <li><a href="regi.html">참가신청</a></li> 
+        <li><a href="regi_edt.html">참가신청 수정</a></li> 
+    </ul>
+</section>
+
+<form class="signUp" method="get">
+    <h2 class="title">2022 adidas 런 서울 참가신청서</h2>    
+    <table class="tb1">
+        <p class="strong">* 표시는 필수 입력 항목입니다.</p>
+        <tbody>
+            <tr>
+                <th>
+                    <span class="na">국적</span>
+                </th>
+                <td>
+                    <label><input type="radio" name="nation" value="N" height="1.25em" checked>내국인(local) &nbsp&nbsp&nbsp&nbsp</label>
+                    <label><input type="radio" name="nation" value="Y" height="1.25em" checked>외국인(foreigner)</label>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <span class="name">이름</span>
+                </th>
+                <td>
+                    <input name="name" type="text" size="100" value class="inputbox" height="50px" required>
+                    <span class="star">*</span>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <span class="birth">생년월일</span>
+                </th>
+                <td>
+                    <input name="birth" type="text" size="41" value class="inputbox" placeholder=" yyyy" height="50px" required 
+                    maxlength="4" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"> 년
+                    <select name="birth_month" class="selectbox" height="50px" required>
+                        <option value class="birth_month" selected disabled hidden>월</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                    <input name="birth" type="text" size="41" value class="inputbox" placeholder=" dd" height="50px" required
+                    maxlength="2" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"> 일
+                    <span class="star">*</span>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <span class="tel_num">전화번호</span>
+                </th>
+                <td>
+                    <select name="tel_num" class="selectbox" height="50px" required>
+                        <option value class="telecom" selected disabled hidden>통신사</option>
+                        <option value="SKT">SKT</option>
+                        <option value="KT">KT</option>
+                        <option value="LG U+">LG U+</option>
+                        <option value="알뜰폰">알뜰폰</option>
+                    </select>
+                    <input name="tel_num" type="text" size="90" value class="inputbox" placeholder=" - 를 제외한 숫자를 입력" height="50px" required 
+                    minlength="10" maxlength="11" 
+                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                    <span class="star">*</span>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <span class="MF">성별</span>
+                </th>
+                <td>
+                    <label><input type="radio" name="MF" value="N" height="1.25em" checked>남 &nbsp&nbsp&nbsp&nbsp</label>
+                    <label><input type="radio" name="MF" value="Y" height="1.25em" checked>여</label>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <span class="pw">비밀번호</span>
+                </th>
+                <td>
+                    <input name="pw" type="password" size="100" value class="inputbox" placeholder=" 12자리 이하로 입력" height="50px" required
+                    minlength="6" maxlength="12">
+                    <span class="star">*</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h3 class="agreebox_title">-동의서약서</h3>
+    <div class="infobox">
+        <div class="agreebox">
+            <div class="agreebox_subtitle">동의서약서</div>
+            <div class="agreebox_detail">
+                <div class="agreebox_txt">
+                    <p>참가자 건강상태<br>											
+                        참가자는 반드시 본인의 건강상태를 고려하여 참가신청을 하시기 바랍니다.<br>			
+                        주최측은 경기 중 발생한 부상, 사고 등에 있어, 주최측의 고의나 과실로 
+                        인하지 않은 참가자의 과실이나 부주의에 의한
+                        사고, 부상 등은 응급조치 이외의 책임을 지지 않습니다.<br>									
+                        주최측은 부상, 사고 등을 대비하여 참가자를 위해 상해보험에 가입하며,
+                        각종 안전사고에 대비한 시설물과 안전요원을 배치합니다.<br>  
+                        경기 중 발생한 부상 및 사고에 대해서는 상해보험에 가입된 한도 내에서 
+                        보험사가 부담하며,주최측에서는 책임을 지지 않습니다.<br> 
+                        또한, 만일의 사고 발생 시 응급조치와 긴급후송을 위한 구급차 등의
+                        응급시스템을 준비합니다. 참가자는 레이스 도중 이상을 느낄 경우 
+                        레이스를 중지하고 구급차를 이용하시길 바랍니다.<br>											
+                        참가자는 의료기관 등의 진료를 통해 무리 없이 달릴 수 있는 지의 
+                        여부를 스스로 결정한 뒤 참가신청 해주시기 바랍니다.<br>											
+                        <br>                                          
+                        상해 보험 											
+                        대회일을 기준으로 만 15세 미만, 80세 이상의 참가자는 사망 보험 
+                        가입이 불가능합니다.<br>
+                        (2007년 9월 25일 이후 출생자, 1942년 4월 21일 이전 출생자는 보험 가입 불가)
+                        ※보험 가입만을 위한 주민등록번호 수집이 이루어지며, 참가자의 
+                        주민등록번호는 보험 가입 이후에는 폐기 처리합니다.<br>
+                        또한 외국인 상해 시에도 생년월일이 확인되면 내국인과 동일하게 
+                        보험혜택을 받을 수 있습니다.<br>
+                        마라톤 대회와 무관한 내용에 대해서는 보상이 되지 않으며, 대회를 마친 뒤 
+                        과도한 음주 등으로 인한 사망사고는 사고조사가 있을 수 있습니다.<br> 
+                        대회 직후 신체 회복에 어려움을 주는 행위는 자제해주시길 당부 드립니다.<br>
+                        * 보험에 대한 자세한 약관은 홈페이지 참가자 유의사항의 보험약관을 
+                        참조해 주시기 바랍니다.<br>
+                        <br>                                            
+                        참가 자격<br>											
+                        본 대회는 대한육상연맹 규칙에 준합니다.<br>
+                        - 신체 건강한 남/녀<br>
+                        - 대한육상경기연맹 등록선수 및 선수등록 말소 후 2년이 경과되지 
+                        않은 자는 참가를 금지합니다.<br>
+                        <br>                                           
+                        실격<br>								
+                        다음의 경우 참가자격이 박탈됩니다.<br>
+                        - 번호표 혹은 기록측정용 칩을 착용하지 않았을 경우<br>
+                        - 임의로 코스를 바꾸거나 대신 참가할 경우<br>
+                        - 칩을 복수로 착용하고 참가할 경우<br>
+                        - 출발점 혹은 반환점의 매트를 밟지 않고 주로를 이탈해서 완주했을 경우<br>
+                        - 레이스 도중 다른 사람으로부터 도움을 받았을 경우<br>
+                        - 기타 부정행위라고 판단할 경우<br>                                        
+                        <br>                    
+                        기타사항											
+                        경기마라톤대회는 참가 신청자의 보다 나은 서비스 제공을 위해 개인정보를 협찬사 및 협력사와 공유할 수 있으며,대회 홍보를 위해 참가자들의 이름 및 초상권을 사용할 수 있습니다.<br> 그 외 다른 영리적인 목적으로 개인정보를 타인 또는 타기업기관에 공개하지 않습니다.<br> 
+                        또한 주민등록번호 수집은 보험 가입만을 위해 이루어지며, 보험 가입 이후에는 폐기 처리합니다.<br>
+                        다만, 신청자가 참가자 유의사항 및 이용약관을 위배한 사람인 경우, 타인에게 법적인 피해를 주는 경우,혹은 미풍양속을 해치는 행위를 한 경우 등은 법적인 조치를 취하기 위해 주민등록번호를 제외한 개인정보를 공개할 수 있습니다​.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p><span><input type="checkbox" class="checkbox" required></span> 위 약관을 이해하였으며, 개인정보 수집 및 이용에 동의합니다.</p>
+    <div class="buttons">
+        <a href="commit_page.php"><button type="submit" class="next">다음</button></a>
+        <button type="reset" class="reset">입력취소</button>
+    </div>
+</form>
+<!--
+<form class="signUp" method="get">
+    <h2>2022 adidas 런 서울 참가신청서</h2>
+    <div class="nation">
+        <label><input type="radio" name="na" checked>내국인(local)</label>
+        <label><input type="radio" name="na">외국인(foreigner)</label>
+    </div>
+    <hr>
+    <div>
+        <label>이름</label>
+        <div>
+            <input type="text" name="name" placeholder=" 이름을 입력하세요" required autofocus>
+            <span>*</span>
+        </div>
+        <hr>
+        <label>전화번호</label>
+        <div>
+            <select>
+                <option value="">SKT</option>
+                <option value="">KT</option>
+                <option value="">LG</option>
+                <option value="">알뜰폰</option>
+            </select>
+            <input type="number" name="tel" placeholder=" - 를 제외한 숫자를 입력" required>
+            //oninvalid="this.setCustomValidity('핸드폰 번호를 입력해주세요')"
+            <span>*</span>
+            <button type="submit" class="verif">인증</button>
+        </div>
+    </div>
+    <hr>
+    <div class="MF">
+        <label><input type="radio" name="MF" checked>남</label>
+        <label><input type="radio" name="MF">여</label><span>*</span>
+    </div>
+    <hr>
+    <label>생년월일</label>
+    <div>
+        <input type="number" name="year" placeholder=" yyyy" required> 년
+        <select>
+            <option value="">1</option>
+            <option value="">2</option>
+            <option value="">3</option>
+            <option value="">4</option>
+            <option value="">5</option>
+            <option value="">6</option>
+            <option value="">7</option>
+            <option value="">8</option>
+            <option value="">9</option>
+            <option value="">10</option>
+            <option value="">11</option>
+            <option value="">12</option>
+            <span>*</span>
+        </select> 월
+        <input type="number" name="days" placeholder=" dd" required> 일
+        <span>*</span>
+        <hr>
+        <div class="course_sel">
+            <label><input type="radio" name="course" checked>10Km</label>
+            <label><input type="radio" name="course">25Km</label>
+            <label><input type="radio" name="course">풀코스</label>
+            <span>*</span>
+        </div>
+        <hr>
+        
+
+        <form action="" id="form">
+            <ul class="outer_box">
+                <li class="checkBox box1">
+                    <ul class="clearfix">
+                        <li>이용약관, 개인정보 수집에 대하여 모두 동의 합니다.
+                        </li>
+                        <li class="All_check_btn">
+                            <input type="checkbox" name="check">
+                        </li>
+                    </ul>             
+                </li>
+                <li class="checkBox box2">
+                    <ul class="clearfix">
+                        <li>asdsadsadsadsadsadsadsa
+                            asdsadsadsadsadsadsdsdd
+                        </li>
+                        <li class="check_btn">
+                            <input type="checkbox" name="check">
+                        </li>
+                    </ul>          
+                    <textarea name="" id="">여러분을 환영합니다.
+                        네이버 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. 본 약관은 다양한 네이버 서비스의 이용과 관련하여 네이버 서비스를 제공하는 네이버 주식회사(이하 ‘네이버’)와 이를 이용하는 네이버 서비스 회원(이하 ‘회원’) 또는 비회원과의 관계를 설명하며, 아울러 여러분의 네이버 서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다.
+                    </textarea>  
+                </li>
+                <li class="checkBox box3">
+                    <ul class="clearfix">
+                        <li>asdsadsadsadsadsadsadsa
+                            asdsadsadsadsadsadsdsdd
+                        </li>
+                        <li class="check_btn">
+                            <input type="checkbox" name="check">
+                        </li>
+                    </ul>          
+                    <textarea name="" id="">여러분을 환영합니다.
+                        네이버 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. 본 약관은 다양한 네이버 서비스의 이용과 관련하여 네이버 서비스를 제공하는 네이버 주식회사(이하 ‘네이버’)와 이를 이용하는 네이버 서비스 회원(이하 ‘회원’) 또는 비회원과의 관계를 설명하며, 아울러 여러분의 네이버 서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다.
+                    </textarea>  
+                </li>
+                <li class="checkBox box4">
+                    <ul class="clearfix">
+                        <li>asdsadsadsadsadsadsadsa
+                            asdsadsadsadsadsadsdsdd
+                        </li>
+                        <li class="check_btn">
+                            <input type="checkbox" name="check">
+                        </li>
+                    </ul>          
+                    <textarea name="" id="">여러분을 환영합니다.
+                        네이버 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. 본 약관은 다양한 네이버 서비스의 이용과 관련하여 네이버 서비스를 제공하는 네이버 주식회사(이하 ‘네이버’)와 이를 이용하는 네이버 서비스 회원(이하 ‘회원’) 또는 비회원과의 관계를 설명하며, 아울러 여러분의 네이버 서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다.
+                    </textarea>  
+                </li>
+            </ul>
+        </form>-->
+            
+    <!--<div class="buttons">
+        <a href="#"><button type="submit" class="next">다음</button></a>
+        <button type="reset" class="reset">입력취소</button>
+    </div>
+</form>-->
+
+<!--<img src="images/three-stripe.jpg" alt="3-stripe" id="img">-->
+
+<!--footer-->
+<section class="footer">
+    <h4>주최</h4>
+    <img src="images/spon1.png" alt="I Seoul U">
+    <h4>스폰서</h4>
+    <img src="images/spon2.png" alt="sub spon1">
+    <img src="images/spon4.png" alt="sub spon2">
+    <img src="images/spon5.png" alt="sub spon3">
+    <img src="images/spon6.png" alt="sub spon4">
+
+    <address id="ad1">
+        <span>아디다스 마라톤 위원회</span>
+        <br>
+        <span>서울특별시 서초구 서초대로 74길 4, 삼성생명 서초타워 23층 (06620)</span>
+    </address>
+    <div class="icons">
+        <a href="https://www.instagram.com/originals_kr/" target="_blank">
+        <i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/login.php?next=https%3A%2F%2Fwww.facebook.com%2Fprivacy%2Fconsent%2Fpipa%2F%3Fparams%255Bpft_surface%255D%3Dfacebook_comet%26params%255Bis_new_user_blocking_flow%255D%3Dfalse%26params%255Bpft_session_key%255D%3D9c168e90-0da5-4d5b-bc22-6f08d62995f6%26params%255Bis_existing_user_blocking_flow%255D%26source%3Dpipa_blocking_flow" target="_blank">
+        <i class="fab fa-facebook-square"></i></a>
+        <a href="https://twitter.com/originals_kr" target="_blank">
+        <i class="fab fa-twitter-square"></i></a>
+        <a href="https://www.youtube.com/user/adidasisallin" target="_blank">
+        <i class="fab fa-youtube-square"></i></a>
+    </div>
+    <br>
+    <address id="ad2">
+        <span> 유) 아디다스코리아  </span>
+        <br>
+        <span> 대표전화 : 02)3333-5555 </span>
+        <br>
+        <span> 팩스 : 02-111-2222 / 이메일 : adidas-korea@naver.com </span>
+        <br>
+        <span>운영시간 : AM 10:00 ~ PM 06:00</span>
+        <br>
+        <span>※마라톤 문의는 (1111-2222)으로 부탁드립니다.</span>
+    </address>
+</section>
+</body>
+</html>
