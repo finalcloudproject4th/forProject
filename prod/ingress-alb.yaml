@@ -3,18 +3,19 @@ kind: Ingress
 metadata:
   name: ingress-alb
   annotations:
-	kubernetes.io/ingress.class: alb
-	alb.ingress.kubernetes.io/scheme: internet-facing
-	alb.ingress.kubernetes.io/subnets: subnet-0d60bab0ab5c2f090,subnet-0c787505bbbad5b72,subnet-0f18341f98ebc6b41
-	alb.ingress.kubernetes.io/target-type: instance
+    kubernetes.io/ingress.class: "alb"
+    alb.ingress.kubernetes.io/scheme: "internet-facing"
+    alb.ingress.kubernetes.io/subnets: "subnet-0d60bab0ab5c2f090,subnet-0c787505bbbad5b72,subnet-0f18341f98ebc6b41"
+    alb.ingress.kubernetes.io/target-type: "instance"
 spec:
   rules:
   - http:
-  	paths:
-  	- path: /
-    	pathType: Prefix
-    	backend:
-      	service:
-        	name: nginx-app-svc
-        	port:
-          	number: 80
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: nginx-app-svc
+            port:
+              number: 80
+
