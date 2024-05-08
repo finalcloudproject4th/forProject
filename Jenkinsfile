@@ -14,6 +14,13 @@ pipeline {
 
   stages {
 
+
+	stage('Checkout') {
+        steps {
+        scmSkip(deleteBuild: true, skipPattern: '.*\\[ci skip\\].*')
+        }
+        }
+
 	// 깃허브 계정으로 레포지토리를 클론한다.
 	stage('Checkout Application Git Branch') {
   	steps {
