@@ -12,6 +12,8 @@ pipeline {
 	gitName = 'finalcloudproject4th'
   }
 
+  
+
   stages {
 
 	// 깃허브 계정으로 레포지토리를 클론한다.
@@ -41,11 +43,11 @@ pipeline {
   	post {
     	failure {
       	echo 'Docker image build failure'
-      	//slackSend (color: '#FF0000', message: "FAILED: Docker Image Build '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
+      	slackSend (color: '#FF0000', message: "FAILED: Docker Image Build '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
     	}
     	success {
       	echo 'Docker image build success'
-      	//slackSend (color: '#0AC9FF', message: "SUCCESS: Docker Image Build '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
+      	slackSend (color: '#0AC9FF', message: "SUCCESS: Docker Image Build '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
     	}
   	}
 	}  
@@ -65,13 +67,13 @@ pipeline {
       	echo 'Docker Image Push failure'
       	sh "docker rmi ${awsecrRegistry}:${currentBuild.number}"
       	sh "docker rmi ${awsecrRegistry}:latest"
-      	//slackSend (color: '#FF0000', message: "FAILED: Docker Image Push '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
+      	slackSend (color: '#FF0000', message: "FAILED: Docker Image Push '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
     	}
     	success {
       	echo 'Docker Image Push success'
       	sh "docker rmi ${awsecrRegistry}:${currentBuild.number}"
       	sh "docker rmi ${awsecrRegistry}:latest"
-      	//slackSend (color: '#0AC9FF', message: "SUCCESS: Docker Image Push '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
+      	slackSend (color: '#0AC9FF', message: "SUCCESS: Docker Image Push '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
     	}
   	}
 	}
@@ -90,7 +92,7 @@ pipeline {
     	sh "cd prod && sed -i 's/eks-repo:.*/eks-repo:${currentBuild.number}/g' deployment.yaml"
     	sh "git add -A"
     	sh "git status"
-    	sh "git commit -m 'update the image tag'"
+    	sh "git commit -m '[ci skip]update the image tag'"
     	sh "git branch -M main"
           	}
 	}
@@ -104,11 +106,11 @@ pipeline {
   	post {
             	failure {
                 	echo 'K8S Manifest failure'
-              	//  slackSend (channel: "#app-build-state", color: '#FF0000', message: "FAILED: K8S Manifest Update ${currentBuild.number}")
+              	  slackSend (channel: "#app-build-state", color: '#FF0000', message: "FAILED: K8S Manifest Update ${currentBuild.number}")
             	}
             	success {
                 	echo 'K8S Manifest success'
-              	//  slackSend (channel: "#app-build-state", color: '#0AC9FF', message: "SUCCESS: K8S Manifest Update ${currentBuild.number}")
+              	  slackSend (channel: "#app-build-state", color: '#0AC9FF', message: "SUCCESS: K8S Manifest Update ${currentBuild.number}")
             	}
         	}	 
 	}
