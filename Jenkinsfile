@@ -12,7 +12,14 @@ pipeline {
 	gitName = 'finalcloudproject4th'
   }
 
-  
+  stages {
+            stage('Checkout') {
+                steps {
+                    scmSkip(deleteBuild: true, skipPattern:'.*\\[ci skip\\].*')
+                }
+            }
+        }
+    }
 
   stages {
 
