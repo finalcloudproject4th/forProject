@@ -1,0 +1,213 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/*------header-----*/
+.header {
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    font-size: 15px;
+}
+
+.h-logo {
+    width: 190px;
+}
+
+nav {
+    display: flex;
+    padding: 0% 6%;
+    justify-content: space-between;
+    align-items: center;
+    background: #000;
+}
+
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+.nav-links ul li::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: #fff;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+.nav-links ul li:hover::after {
+    width: 100%;
+}
+
+/*-----side_menu & content------*/
+.side_menu {
+    position: absolute;
+    height: 500px; /*부모 개념이 있어야 가능*/
+    list-style: none;
+    background-color: #ccc;
+    text-align: center;
+    margin-top: 100px;
+    z-index: 1;
+    clear:both;
+}
+.side_menu h2 {
+    font-size: 30px;
+    padding: 30px 30px 20px 30px;
+}
+.menu {
+    width: 100%;
+}
+.menu li a {
+    text-decoration: none;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    padding: 30px 20px;
+    font-size: 20px;
+    color: #111;
+}
+.menu li a:after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: #ff7744;;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+.menu li a:hover::after {
+    width: 50%;
+}
+
+/*-----content------*/
+.layout {
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 8%;
+    max-width: 650px;
+    clear:both;
+}
+.layout .title {
+    padding-top: 200px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.tb1 {
+    display: block;
+    padding-left: 20%;
+}
+
+.qna{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.qna > li{
+  padding: 30px 0;
+  box-sizing: border-box;
+}
+.qna > li:nth-child(n+2){ /* 아이템 구분 선 */
+  border-top: 2px solid #aaa;
+}
+.qna input {
+  display: none;
+}
+
+.qna label {
+  font-weight: bold;
+  color: #000;
+  margin: 40px 0;
+  cursor: pointer;
+}
+.qna label::before { /* 제목 앞 화살표 */
+  display: block;
+  content: "";
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+  border-left: 8px solid #ff7744;
+  margin: 2px 0 0 8px;
+  float: left;
+}
+.qna input:checked + label::before { /* 내용 펼침 상태 제목 앞 화살표 */
+  border: 8px solid transparent;
+  border-top: 8px solid #ff7744;
+  border-bottom: 0;
+  margin: 8px 4px 0;
+}
+
+p{
+    font-weight: bold;
+}
+
+.qna div { /* 내용 영역 - 기본 감춤 상태 */
+  display: none;
+  color: #666;
+  font-size: 0.9375em;
+  overflow: hidden;
+  padding: 10px 0 10px 30px;
+  box-sizing: border-box;
+  transition: max-height 0.4s;
+}
+.qna input:checked + label + div { /* 내용 영역 펼침 */
+  display: block;
+}
+
+
+/*------footer-----*/
+.footer {
+    width: 100%;
+    margin: auto;
+    padding: 0 30px 0 30px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background: #000;
+    color: #fff;
+    box-sizing: border-box;
+    z-index: 999;
+}
+
+.footer h4 {
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+.footer img {
+    padding-bottom: 30px;
+    padding-right: 40px;
+}
+.footer #ad1 span {
+    font-style: normal;
+}
+.footer #ad2 span {
+    font-style: normal;
+    float: right;
+}
+.icons .fab{
+    float: right;
+    margin: 0 13px;
+    cursor: pointer;
+    padding-right: 10px 0;
+}
+.icons a {
+    color: #fff;
+}
+.icons a:hover {
+    color: #E23051;
+}
