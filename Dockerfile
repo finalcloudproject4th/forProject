@@ -1,7 +1,23 @@
-FROM ubuntu
-RUN apt-get update && apt-get install -y -q nginx
+# Base Image
+FROM ubuntu:22.04
+
+# apache2, php, mysql install
+RUN apt-get update && \
+DEBIAN_FRONTEND="noninteractive" apt-get install -y apache2 php mysql-server php-mysql && \
+apt-get clean && \
+rm -rf /var/lib/apt/lists/*
+
+# apache2 start
+RUN a2enmod rewrite && service apache2 start
+
+# Copy host file to container
 COPY *.html /var/www/html/
-COPY css/ /var/www/html/css/
-COPY js/ /var/www/html/js/
-COPY images/ /var/www/html/images/
-CMD ["nginx", "-g", "daemon off; " ]
+COPY *.php /var/www/html/
+
+# Port Open
+
+EXPOSE 80
+
+# Run Apache2
+CMD ["apache2ctl", "-D", "FOREGROUND"]
+
