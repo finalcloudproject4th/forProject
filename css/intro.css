@@ -1,0 +1,247 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/*------header-----*/
+.header {
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    font-size: 15px;
+}
+
+.h-logo {
+    width: 190px;
+}
+
+nav {
+    display: flex;
+    padding: 0% 6%;
+    justify-content: space-between;
+    align-items: center;
+    background: #000;
+}
+
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+.nav-links ul li::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: #fff;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+.nav-links ul li:hover::after {
+    width: 100%;
+}
+
+/*-----side_menu & content------*/
+.side_menu {
+    position: absolute;
+    height: 500px; /*부모 개념이 있어야 가능*/
+    list-style: none;
+    background-color: #ccc;
+    text-align: center;
+    margin-top: 100px;
+    z-index: 1;
+}
+.side_menu h2 {
+    font-size: 30px;
+    padding: 30px 30px 20px 30px;
+}
+.menu {
+    width: 100%;
+}
+.menu li a {
+    text-decoration: none;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    padding: 30px 20px;
+    font-size: 20px;
+    color: #111;
+}
+
+.menu li a:after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: #ff7744;;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.menu li a:hover::after {
+    width: 50%;
+}
+/*-------------------------*/
+.content {
+    width: 100%;
+    margin: auto;
+    /*position: relative;*/
+    /*box-sizing: border-box;*/
+    padding-bottom: 8%;
+}
+.content img {
+    width: 30%;
+    margin-left: 20%;
+    padding-top: 15%;
+}
+
+form {
+    display: block;
+    margin-left: 60%;
+    margin-top: -23%;
+}
+
+table {
+    width: 100%;
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    white-space: normal;
+    line-height: normal;
+    font-weight: normal;
+    font-size: medium;
+    font-style: normal;
+    text-align: start;
+    border-spacing: 2px;
+    font-variant: normal;
+}
+.tb1 {
+    width: 25%;
+    margin-bottom: 3%;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+tr {
+    display: table-row;
+    vertical-align: auto;
+}
+th {
+    display: table-cell;
+    vertical-align: inherit;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+    white-space : nowrap
+}
+
+.regi-btn {
+    text-decoration: none;
+    display: inline-block;
+    padding: 12px 34px;
+    font-size: 17px;
+    background: transparent;
+    color: #000;
+    position: relative;
+    border: 2px solid #555;
+    border-radius: 18px;
+    cursor: pointer;
+    margin-left: 58%;  
+    block-size: 2em;
+}
+.check-btn {
+    display: inline-block;
+    text-decoration: none;
+    border: 2px solid #555;
+    padding: 12px 34px;
+    font-size: 17px;
+    background: transparent;
+    color: #000;
+    position: relative;
+    border-radius: 18px;
+    cursor: pointer;
+    margin-left: 1%;
+    block-size: 2em;
+}
+
+.regi-btn:hover {
+    border: 2px solid #fff;
+    background-color: #000;
+    color: #fff;
+    transition: 0.5s;
+}
+
+.check-btn:hover {
+    border: 2px solid #fff;
+    background-color: #000;
+    color: #fff;
+    transition: 0.5s;
+}
+
+.map {
+    padding-bottom: 12%;
+}
+
+.map .map_content h2{
+    padding: 2%; 
+    padding-left: 620px;
+}
+
+/*------footer-----*/
+.footer {
+    width: 100%;
+    margin: auto;
+    padding: 0 30px 0 30px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background: #000;
+    color: #fff;
+    box-sizing: border-box;
+    z-index: 999;
+}
+
+.footer h4 {
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+.footer img {
+    padding-bottom: 30px;
+    padding-right: 40px;
+}
+.footer #ad1 span {
+    font-style: normal;
+}
+.footer #ad2 span {
+    font-style: normal;
+    float: right;
+}
+.icons .fab{
+    float: right;
+    margin: 0 13px;
+    cursor: pointer;
+    padding-right: 10px 0;
+}
+.icons a {
+    color: #fff;
+}
+.icons a:hover {
+    color: #E23051;
+}
