@@ -9,7 +9,7 @@ spec:
   ports:
   - port: 80
     protocol: TCP
-    targetPort: 31117
+    targetPort: 3000
   selector:
     app: grafana
 
