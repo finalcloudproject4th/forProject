@@ -18,7 +18,7 @@ spec:
         app: nginx-app
     spec:
       containers:
-      - image: 637423550581.dkr.ecr.ap-northeast-2.amazonaws.com/eks-repo:45
+      - image: 637423550581.dkr.ecr.ap-northeast-2.amazonaws.com/eks-repo:46
         name: nginx
         ports:
         - containerPort: 80
