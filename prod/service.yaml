@@ -2,19 +2,14 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: grafana #nginx-app
-        # 애플리케이션 라벨 변경
-  name: grafana-svc #nginx-app-svc
-        # 서비스 이름 변경
+    app: nginx-app
+  name: nginx-app-svc
 spec:
-  type: LoadBalancer #NodePort
-        # 서비스 타입 LoadBalancer로 변경
+  type: NodePort
   ports:
   - port: 80
     protocol: TCP
-    targetPort: 31117 #80
-        # Grafana 기본 웹 포트: 3000
+    targetPort: 80
   selector:
-    app: grafana #nginx-app
-        # 포트포워딩 대상 애플리케이션 라벨
+    app: nginx-app
 
