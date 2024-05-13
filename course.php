@@ -65,3 +65,4 @@ $course_contents_result = $conn->query($course_contents_sql);
 // MySQL 연결 닫기
 $conn->close();
 ?>
+
