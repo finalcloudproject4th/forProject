@@ -30,7 +30,7 @@ $course_contents_result = $conn->query($course_contents_sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $course_id; ?></title>
+    <title><?php echo $course_id; ?>ㅁ</title>
 </head>
 <body>
     <h2><?php echo $course_title; ?></h2>
