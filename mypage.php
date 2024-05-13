@@ -42,7 +42,7 @@ if(isset($_SESSION['uid'])){
     <title>마이페이지</title>
 </head>
 <body>
-    <h2>마이페이지</h2>
+    <h2>마이페이지 test</h2>
     <p>사용자 ID: <?php echo $user_info_row['id']; ?></p>
     <p>수강중인 과목 수: <?php echo $num_courses; ?></p>
     <p>수강중인 과목:</p>
