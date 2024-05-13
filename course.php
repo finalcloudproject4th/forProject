@@ -30,11 +30,12 @@ $course_contents_result = $conn->query($course_contents_sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $course_id; ?>ㅁ</title>
+    <title><?php echo $course_title; ?></title>
 </head>
 <body>
     <h2><?php echo $course_title; ?></h2>
-    <h3>강의 목차</h3>
+    <h3>강의 목차 test</h3>
+	<h2><?php echo $course_id; ?></h2>
     <ul>
         <?php
         // 주차별 강의 목록을 출력
