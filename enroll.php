@@ -33,7 +33,7 @@
             die("Connection failed: " . $conn->connect_error);
         }
 
-	session_start();
+        session_start();
 
         // POST 요청에서 사용자가 입력한 검색어 가져오기
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -51,33 +51,33 @@
             } else {
                 echo "No courses found.";
             }
-	}
-	// POST 요청에서 사용자가 선택한 과목의 고유 id 가져오기
-	if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    		if(isset($_POST['cid'])){
-        		$cid = $_POST['cid'];
+        }
+        // POST 요청에서 사용자가 선택한 과목의 고유 id 가져오기
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                if(isset($_POST['cid'])){
+                        $cid = $_POST['cid'];
 
-			// 사용자 uid 가져오기
-			if(isset($_SESSION['uid'])) {
-				$user_id = $_SESSION['uid'];
+                        // 사용자 uid 가져오기
+                        if(isset($_SESSION['uid'])) {
+                                $user_id = $_SESSION['uid'];
 
-			// enrollments update
-				$update_enrollments_sql = "INSERT INTO enrollments(user_id, course_id) values ('$user_id', '$cid')";
-				if ($conn->query($update_enrollments_sql) === TRUE) {
-					echo "success";
-					alert("성공!");
-				} else {
-					echo "fail";
-					alert("실패!");
-				}
-			} else {
-				echo "user not logged in";
-			}
-		} else {
-			echo "cid not provided";
-		}
-	}
-			
+                        // enrollments update
+                                $update_enrollments_sql = "INSERT INTO enrollments(user_id, course_id) values ('$user_id', '$cid')";
+                                if ($conn->query($update_enrollments_sql) === TRUE) {
+                                        echo "success";
+                                        alert("성공!");
+                                } else {
+                                        echo "fail";
+                                        alert("실패!");
+                                }
+                        } else {
+                                echo "user not logged in";
+                        }
+                } else {
+                        echo "cid not provided";
+                }
+        }
+
 
 
         // MySQL 연결 닫기
@@ -93,11 +93,11 @@
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xhr.onreadystatechange = function() {
                 if (xhr.readyState == 4 && xhr.status == 200) {
-		    // alert(xhr.responseText);
+                    // alert(xhr.responseText);
                     if (xhr.responseText === "success") {
                         // alert("수강신청이 완료되었습니다.");
                         window.location.reload(); // 페이지 새로고침
-		    }
+                    }
 
                 }
             };
@@ -107,3 +107,4 @@
 
 </body>
 </html>
+
