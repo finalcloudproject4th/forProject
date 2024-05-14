@@ -34,8 +34,7 @@ $course_contents_result = $conn->query($course_contents_sql);
 </head>
 <body>
     <h2><?php echo $course_title; ?></h2>
-    <h3>강의 목차 test</h3>
-	<h2><?php echo $course_id; ?></h2>
+    <h3>강의 목차</h3>
     <ul>
         <?php
         // 주차별 강의 목록을 출력
@@ -65,4 +64,3 @@ $course_contents_result = $conn->query($course_contents_sql);
 // MySQL 연결 닫기
 $conn->close();
 ?>
-
