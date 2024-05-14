@@ -35,15 +35,6 @@ $course_contents_result = $conn->query($course_contents_sql);
 <body>
     <h2><?php echo $course_title; ?></h2>
     <h3>강의 목차</h3>
-    <ul>
-        <?php
-        // 주차별 강의 목록을 출력
-        while($row = $course_contents_result->fetch_assoc()) {
-	    echo "Test";
-            echo "<li><a href='#'>" . $row["week"] . "주차: " . $row["subtitle"] . "</a></li>";
-        }
-        ?>
-    </ul>
 
     <?php
     // 주차별 강의 목록을 다시 가져와서 출력
