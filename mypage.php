@@ -66,4 +66,3 @@ if(isset($_SESSION['uid'])){
 // MySQL 연결 닫기
 $conn->close();
 ?>
-
