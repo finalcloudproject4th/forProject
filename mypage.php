@@ -50,7 +50,7 @@ if(isset($_SESSION['uid'])){
         <?php
         // 사용자가 수강중인 각각의 과목에 대한 하이퍼링크 생성
         while($row = $enrollments_result->fetch_assoc()) {
-             echo "<li><a href='course.php?cid=" . urlencode($row["cid"]) . "'>" . $row["cname"] . "</a></li>";
+             echo "<li><a href='course.php?cid=" . $row["cid"] . "'>" . $row["cname"] . "</a></li>";
         }
         ?>
     </ul>
