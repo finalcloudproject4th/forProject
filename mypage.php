@@ -99,7 +99,7 @@ if(isset($_SESSION['uid'])){
                     </div>
                     <table class="tb" width = 600 height = 200 align = "center" border="1">
                         <tr><td width="200">ID</td><td width="400"><?php echo $user_info_row['id']; ?></td></tr>
-                        <tr><td width="200">수강과목 수</td><td width="400"><a href="mycourse.html"><?php echo $num_courses; ?></a></td></tr>
+                        <tr><td width="200">수강과목 수</td><td width="400"><a href="mycourse.php"><?php echo $num_courses; ?></a></td></tr>
                     </table>
                 </div>
                 <!-- enroll.php로 이동하는 링크 추가 -->
