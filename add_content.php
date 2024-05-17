@@ -22,16 +22,20 @@ if ($conn->connect_error) {
 }
 
 // 사용자가 제출한 강의 이름 가져오기
-$course_name = $_GET['course_name'];
+$course_id = $_GET['course_id'];
+$week = $_GET['week'];
+$subtitle = $_GET['subtitle'];
+
 
 // 새로운 강의를 데이터베이스에 추가하는 쿼리 실행
-$sql = "INSERT INTO courses (cname, instructor) VALUES ('$course_name', '{$_SESSION['name']}')";
+$sql = "INSERT INTO course_contents (cid, week, subtitle) VALUES ('$course_id', '$week', '$subtitle')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "New course added successfully";
-} else {
-    echo "Error adding course: " . $conn->error;
+        echo "New content added successfully";
+}else{
+	echo "Error adding content: " . $conn->error;
 }
+
 // MySQL 연결 닫기
 $conn->close();
 ?>

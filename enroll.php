@@ -6,8 +6,11 @@
     <title>Enroll</title>
 </head>
 <body>
+    <!-- mypage.php로 이동하는 링크 추가 -->
+    <p><a href="mypage.php">마이페이지로 가기</a></p>
+    <br>
     <h2>Enroll</h2>
-    <form action="enroll.php" method="post">
+    <form action="" method="post"> <!-- search 기능을 현재 페이지에서 처리 -->
         <label for="search">Search:</label>
         <input type="text" id="search" name="search">
         <input type="submit" value="Search">
@@ -16,6 +19,8 @@
     <h3>Available Courses:</h3>
     <ul>
         <?php
+        session_start();
+
         // MySQL 데이터베이스 연결 정보
         $servername = "database-1.cvu4uqwmyddr.ap-northeast-2.rds.amazonaws.com";
         $username = "admin";
@@ -31,7 +36,7 @@
         }
 
         // POST 요청에서 사용자가 입력한 검색어 가져오기
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['search'])) {
             $search = $_POST['search'];
 
             // 사용자가 입력한 검색어를 사용하여 과목을 검색
@@ -47,49 +52,34 @@
                 echo "No courses found.";
             }
         }
-// POST 요청에서 사용자가 선택한 과목의 고유 id 가져오기
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if(isset($_POST['cid'])){
-        $cid = $_POST['cid'];
-
-        // 해당 강좌의 수강정원 체크
-        $check_capacity_sql = "SELECT capacity FROM courses WHERE cid='$cid'";
-        $result = $conn->query($check_capacity_sql);
-        if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-            $capacity = $row["capacity"];
-            if($capacity > 0){
-                // 수강신청 가능한 경우 enrollments 테이블 업데이트
-                session_start();
-                $user_id = $_SESSION['uid']; // 로그인한 사용자의 id
-                $update_enrollments_sql = "INSERT INTO enrollments (user_id, course_id) VALUES ('$user_id', '$cid')";
-                if ($conn->query($update_enrollments_sql) === TRUE) {
-                    // 해당 강좌의 수강정원 감소
-                    $update_capacity_sql = "UPDATE courses SET capacity = capacity - 1 WHERE cid='$cid'";
-                    if ($conn->query($update_capacity_sql) === TRUE) {
-                        echo "success";
-                    } else {
-                        echo "fail";
-                    }
-                } else {
-                    echo "fail";
-                }
-            } else {
-                echo "capacity_full";
-            }
-        } else {
-            echo "not_found";
-        }
-    } else {
-        echo "cid_not_provided";
-    }
-}
 
         // MySQL 연결 닫기
         $conn->close();
         ?>
     </ul>
+    <script>
+        // 수강신청 함수
+        function enroll(cid) {
+            // 수강신청을 위한 AJAX 요청
+		var url = '/add_enroll.php?cid='+ encodeURIComponent(cid);
 
+		fetch(url)
+       		 .then(response => {
+           	 if (response.ok) {
+                alert('코스가 성공적으로 추가되었습니다.');
+                window.location.reload(); // 페이지 새로고침
+           	 } else {
+               		 throw new Error('코스 추가 중 오류가 발생했습니다.');
+           	 }
+        })
+        .catch(error => {
+            alert(error.message);
+        });
+
+
+	}
+    </script>
 </body>
 </html>
+
 

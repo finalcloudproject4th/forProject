@@ -41,23 +41,65 @@ $courses_result = $conn->query($courses_sql);
     <ul>
         <?php
         // 강사가 담당하는 강의 목록 출력
-        while($row = $courses_result->fetch_assoc()) {
+        #while($row = $courses_result->fetch_assoc()) {
             #echo "<li><a href='lecturemanage.php?cid=" . $row["cid"] . "'>" . $row["cname"] . "</a></li>";
-            echo "<li>";
+            #echo "<li>";
             #echo "<a href='lecturemanage.php?cid=" . $row["cid"] . "'>" . $row["cname"] . "</a>";
-            echo "<a href='course.php?cid=" . $row["cid"] . "'>" . $row["cname"] . "</a>";
-            echo " | <a href='remove_course.php?cid=" . $row["cid"] . "'>Remove</a>";
-            echo "</li>";
+            #echo "<a href='inst_course.php?cid=" . $row["cid"] . "'>" . $row["cname"] . "</a>";
+            #echo " | <a href='remove_course.php?cid=" . $row["cid"] . "'>Remove</a>";
+            #echo "</li>";
+            #echo "<button onclick='showAlert()'>remove</button>";
+        #}
+        while($row = $courses_result->fetch_assoc()) {
+            echo "<li><a href='lecturemanage.php?cid=" . $row["cid"] . "'>" . $row["cname"] . "</a> | <button onclick='removeCourse(" . $row["cid"] . ")'>Remove</button></li>";
         }
         ?>
     </ul>
 
     <h3>Add New Course</h3>
-    <form action="add_course.php" method="post">
+    <form id="add_course_form">
         <label for="course_name">Course Name:</label>
         <input type="text" id="course_name" name="course_name" required><br>
-        <input type="submit" value="Add Course">
+        <button type="button" onclick="addCourse()">Add Course</button>
     </form>
+
+<script>
+    function addCourse() {
+        var courseName = document.getElementById('course_name').value;
+	var url = '/add_course.php?course_name=' + encodeURIComponent(courseName);
+
+        fetch(url)
+        .then(response => {
+            if (response.ok) {
+                alert('코스가 성공적으로 추가되었습니다.');
+                window.location.reload(); // 페이지 새로고침
+            } else {
+                throw new Error('코스 추가 중 오류가 발생했습니다.');
+            }
+        })
+        .catch(error => {
+            alert(error.message);
+        });
+    }
+
+
+    function removeCourse(cid) {
+        var url = '/remove_course.php?cid=' + encodeURIComponent(cid);
+
+        fetch(url)
+        .then(response => {
+            if (response.ok) {
+                alert('코스가 성공적으로 삭제되었습니다.');
+                window.location.reload(); // 페이지 새로고침
+            } else {
+                throw new Error('코스 삭제 중 오류가 발생했습니다.');
+            }
+        })
+        .catch(error => {
+            alert(error.message);
+        });
+    }
+</script>
 
 </body>
 </html>
@@ -66,4 +108,3 @@ $courses_result = $conn->query($courses_sql);
 // MySQL 연결 닫기
 $conn->close();
 ?>
-

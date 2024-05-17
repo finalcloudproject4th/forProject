@@ -13,13 +13,12 @@ RUN a2enmod rewrite && service apache2 start
 # Copy host file to container
 COPY *.html /var/www/html/
 COPY *.php /var/www/html/
-COPY js/ /var/www/html/js/
-COPY images/ /var/www/html/images/
-COPY css/ /var/www/html/css/
 
 # Port Open
+
 EXPOSE 80
 
 # Run Apache2
 CMD ["apache2ctl", "-D", "FOREGROUND"]
+
 
