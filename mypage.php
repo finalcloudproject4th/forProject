@@ -62,7 +62,11 @@ if(isset($_SESSION['uid'])){
                 <div id="top">
                     <a id="h-logo" href="index.html"><img src="images/logo.png" alt="logo"></a>
                     <ul>
-                        <li><a href="login.html">회원로그인  |</a></li>
+			if(isset($_SESSION['uid'])){
+				<li><a href=:logout.php">로그아웃 |</a></li>
+			} else {
+                        	<li><a href="login.html">회원로그인  |</a></li>
+			}
                         <li><a href="instructorlogin.html">강사로그인</a></li>
                         <li><a href="register.html">회원가입</a></li>
                         <li><a href="mypage.php">마이페이지</a></li>
