@@ -16,7 +16,6 @@ COPY *.php /var/www/html/
 COPY js/ /var/www/html/js/
 COPY css/ /var/www/html/css/
 COPY images/ /var/www/html/images/
-COPY .htaccess /var/www/html/
 
 # Port Open
 
