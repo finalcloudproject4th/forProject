@@ -63,10 +63,10 @@ if(isset($_SESSION['uid'])){
                     <a id="h-logo" href="index.html"><img src="images/logo.png" alt="logo"></a>
                     <ul>
 			<?php
-			if(isset($_SESSION['uid'])){
-				<li><a href="logout.php">로그아웃 |</a></li>
+			if(isset($_SESSION['uid'])) {
+				echo '<li><a href="logout.php">로그아웃 |</a></li>';
 			} else {
-                        	<li><a href="login.html">회원로그인  |</a></li>
+                        	echo '<li><a href="login.html">회원로그인  |</a></li>';
 			}
 			?>
                         <li><a href="instructorlogin.html">강사로그인</a></li>
