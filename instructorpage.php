@@ -63,6 +63,9 @@ $courses_result = $conn->query($courses_sql);
         <button type="button" onclick="addCourse()">Add Course</button>
     </form>
 
+    <!-- 메인 페이지로 이동하는 버튼을 페이지 맨 아래에 추가 -->
+    <button onclick="window.location.href='index.php'">Go to Main Page</button>
+
 <script>
     function addCourse() {
         var courseName = document.getElementById('course_name').value;
@@ -71,10 +74,10 @@ $courses_result = $conn->query($courses_sql);
         fetch(url)
         .then(response => {
             if (response.ok) {
-                alert('코스가 성공적으로 추가되었습니다.');
+                alert('성공적으로 추가되었습니다.');
                 window.location.reload(); // 페이지 새로고침
             } else {
-                throw new Error('코스 추가 중 오류가 발생했습니다.');
+                throw new Error('추가 중 오류가 발생했습니다.');
             }
         })
         .catch(error => {
@@ -89,10 +92,10 @@ $courses_result = $conn->query($courses_sql);
         fetch(url)
         .then(response => {
             if (response.ok) {
-                alert('코스가 성공적으로 삭제되었습니다.');
+                alert('성공적으로 삭제되었습니다.');
                 window.location.reload(); // 페이지 새로고침
             } else {
-                throw new Error('코스 삭제 중 오류가 발생했습니다.');
+                throw new Error('삭제 중 오류가 발생했습니다.');
             }
         })
         .catch(error => {

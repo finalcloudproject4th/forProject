@@ -49,6 +49,9 @@ if (!$course_contents_result) {
     <title>Lecture Management</title>
 </head>
 <body>
+    <!-- 메인 페이지로 이동하는 버튼을 페이지 맨 위에 추가 -->
+    <button onclick="window.location.href='index.php'">Go to Main Page</button>
+
     <h2>Lecture Management</h2>
     <h3>Course: <?php echo $course_name; ?></h3>
     <h3>Course Contents</h3>
@@ -108,10 +111,10 @@ function addContent(event) {
     fetch(url)
 	.then(response => {
             if (response.ok) {
-                alert( '콘텐츠가 성공적으로 추가되었습니다.');
+                alert( '성공적으로 추가되었습니다.');
                 window.location.reload(); // 페이지 새로고침
             } else {
-                throw new Error('콘텐츠 추가 중 오류가 발생했습니다.');
+                throw new Error('추가 중 오류가 발생했습니다.');
             }
         })
         .catch(error => {
@@ -134,10 +137,10 @@ function editContent(event) {
     fetch(url)
         .then(response => {
             if (response.ok) {
-                alert( '콘텐츠가 성공적으로 수정되었습니다.');
+                alert( '성공적으로 수정되었습니다.');
                 window.location.reload(); // 페이지 새로고침
             } else {
-                throw new Error('콘텐츠 수정 중 오류가 발생했습니다.');
+                throw new Error('수정 중 오류가 발생했습니다.');
             }
         })
         .catch(error => {
@@ -160,10 +163,10 @@ function deleteContent(event) {
     fetch(url)
         .then(response => {
             if (response.ok) {
-                alert( '콘텐츠가 성공적으로 삭제되었습니다.');
+                alert( '성공적으로 삭제되었습니다.');
                 window.location.reload(); // 페이지 새로고침
             } else {
-                throw new Error('콘텐츠 삭제 중 오류가 발생했습니다.');
+                throw new Error('삭제 중 오류가 발생했습니다.');
             }
         })
         .catch(error => {
