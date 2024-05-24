@@ -151,6 +151,9 @@ html, body, form {
     text-decoration: none;
     text-align: center;
 }
+#nav a:link {
+    color: black; 
+}
 #nav a:visited {
     color: black;
 }
