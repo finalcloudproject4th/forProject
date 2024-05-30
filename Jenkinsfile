@@ -111,11 +111,11 @@ pipeline {
   	post {
             	failure {
                 	echo 'K8S Manifest failure'
-              	  slackSend (channel: "#app-build-state", color: '#FF0000', message: "FAILED: K8S Manifest Update ${currentBuild.number}")
+              	  slackSend (color: '#FF0000', message: "FAILED: K8S Manifest Update ${currentBuild.number}")
             	}
             	success {
                 	echo 'K8S Manifest success'
-              	  slackSend (channel: "#app-build-state", color: '#0AC9FF', message: "SUCCESS: K8S Manifest Update ${currentBuild.number}")
+              	  slackSend (color: '#0AC9FF', message: "SUCCESS: K8S Manifest Update ${currentBuild.number}")
             	}
         	}	 
 	}
