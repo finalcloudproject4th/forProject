@@ -63,7 +63,7 @@ pipeline {
     	withDockerRegistry([url: "https://${awsecrRegistry}", credentialsId: "ecr:ap-northeast-2:${awsecrRegistryCredential}"]) {
       	sh "docker push ${awsecrRegistry}:${currentBuild.number}"
       	sh "docker push ${awsecrRegistry}:latest"
-      	// 10초 쉰 후에 다음 작업 이어나가도록 함
+      	// 10초 동안 대기하여 ECR에 이미지가 완전히 등록될 시간을 줌
       	sleep 10
     	}
   	}
