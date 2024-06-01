@@ -27,5 +27,6 @@ spec:
             cpu: 500m
           requests:
             cpu: 200m
-      - args: --kubelet-insecure-tls
+      - args: 
+        - --kubelet-insecure-tls
 
