@@ -18,7 +18,7 @@ spec:
         app: proj-app
     spec:
       containers:
-      - image: 637423550581.dkr.ecr.ap-northeast-2.amazonaws.com/eks-repo:102
+      - image: 637423550581.dkr.ecr.ap-northeast-2.amazonaws.com/eks-repo:103
         name: proj
         ports:
         - containerPort: 80
