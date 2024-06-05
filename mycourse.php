@@ -3,7 +3,7 @@
 $servername = "database-2.cluster-cvu4uqwmyddr.ap-northeast-2.rds.amazonaws.com";
 $username = "admin";
 $password = "Amazon1!";
-$dbname = "user";
+$dbname = "project";
 
 // MySQL 데이터베이스 연결
 $conn = new mysqli($servername, $username, $password, $dbname);
