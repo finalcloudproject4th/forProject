@@ -6,7 +6,6 @@ metadata:
     app: proj-app
   name: proj-app
 spec:
-  replicas: 3
   selector:
     matchLabels:
       app: proj-app
