@@ -17,7 +17,7 @@
     <ul>
         <?php
         // MySQL 데이터베이스 연결 정보
-        $servername = "database-1.cvu4uqwmyddr.ap-northeast-2.rds.amazonaws.com";
+        $servername = "database-2.cluster-cvu4uqwmyddr.ap-northeast-2.rds.amazonaws.com";
         $username = "admin";
         $password = "Amazon1!";
         $dbname = "user";
