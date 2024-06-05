@@ -45,7 +45,7 @@
 
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
-                    echo "<li>" . $row["cname"] . " - " . $row["description"] . " - " . $row["instructor"] "</li>";
+                    echo "<li>" . $row["cname"] . " - " . $row["description"] . " - " . $row["instructor"] . "</li>";
                     echo "<button onclick=\"enroll('" . $row["cid"] . "')\">Enroll</button><br>";
                 }
             } else {
