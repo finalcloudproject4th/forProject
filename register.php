@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // 데이터베이스에 사용자 정보 삽입
         $sql = "INSERT INTO users (id, password) VALUES ('$id', '$password')";
         if ($conn->query($sql) === TRUE) {
-                //alert( "회원가입 성공!");
+            alert( "회원가입 성공!");
             // 회원가입이 완료되면 index.html 페이지로 이동
             header("Location: index.html");
             exit();
